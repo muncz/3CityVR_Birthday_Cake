@@ -5,6 +5,7 @@ using UnityEngine;
 public class InspectBlow : MonoBehaviour {
 
     public static float MicLoudness;
+    public float BlowForce;
 
     private string _device;
 
@@ -26,6 +27,7 @@ public class InspectBlow : MonoBehaviour {
 
     void Start() {
         Debug.Log("Start Blower");
+        BlowForce = 0f;
     }
 
     //get data from microphone into audioclip
@@ -45,6 +47,7 @@ public class InspectBlow : MonoBehaviour {
             //}
         }
         //Debug.Log(sum * 10000000);
+        BlowForce = sum;
         return sum;
     }
 
